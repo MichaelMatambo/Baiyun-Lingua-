@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — BaiYun Lingua</title>
+<meta name="description" content="Join a BaiYun Lingua language club and practice in real time with fellow learners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { cream:"#FFF8E7", burgundy:{DEFAULT:"#6B1D2A",dark:"#521521"}, beige:"#F5E6CC", charcoal:"#2B2B2B", gold:"#C9A86A" },
+    fontFamily: { display:["Playfair Display","serif"], sans:["Inter","sans-serif"] }
+  } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header id="site-nav" class="site-nav sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-2xl md:text-3xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[11px] md:text-xs tracking-[0.25em] text-charcoal/70">LINGUA</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-[15px]">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="languages.html" class="nav-link">Languages</a></li>
+      <li><a href="index.html#method" class="nav-link">Method</a></li>
+      <li><a href="index.html#culture" class="nav-link">Culture</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="community.html" class="nav-link active">Community</a></li>
+      <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+    </ul>
+    <div class="hidden lg:block"><a href="enroll.html" class="btn-primary px-5 py-2.5 text-sm font-medium inline-block">Enroll Now</a></div>
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-charcoal/10 bg-cream px-6 py-5 space-y-4">
+    <a href="index.html" class="block nav-link">Home</a>
+    <a href="languages.html" class="block nav-link">Languages</a>
+    <a href="index.html#method" class="block nav-link">Method</a>
+    <a href="index.html#culture" class="block nav-link">Culture</a>
+    <a href="about.html" class="block nav-link">About</a>
+    <a href="community.html" class="block nav-link active">Community</a>
+    <a href="index.html#resources" class="block nav-link">Resources</a>
+    <a href="enroll.html" class="btn-primary block text-center px-5 py-3 text-sm font-medium mt-2">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main" class="max-w-4xl mx-auto px-6 lg:px-10 py-14">
+  <div class="text-center mb-8">
+    <p class="text-gold font-medium tracking-wide mb-3">Language clubs</p>
+    <h1 class="font-display text-4xl font-700">Community chat</h1>
+    <p class="mt-3 text-charcoal/70">Pick a club and start practicing. Messages are visible to everyone in the room.</p>
+  </div>
+
+  <div class="bg-white rounded-3xl border border-charcoal/5 overflow-hidden flex flex-col md:flex-row h-[70vh] min-h-[480px]">
+    <!-- Club list -->
+    <aside class="md:w-56 border-b md:border-b-0 md:border-r border-charcoal/10 bg-beige/40 p-4 flex md:block gap-2 overflow-x-auto md:overflow-visible">
+      <button data-club="mandarin" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇨🇳 Mandarin Club</button>
+      <button data-club="english" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇬🇧 English/IELTS Club</button>
+      <button data-club="korean" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇰🇷 Korean Club</button>
+      <button data-club="japanese" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇯🇵 Japanese Club</button>
+      <button data-club="spanish" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇪🇸 Spanish Club</button>
+      <button data-club="french" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇫🇷 French Club</button>
+      <button data-club="portuguese" class="club-btn text-left px-4 py-2.5 rounded-xl text-sm font-medium w-full whitespace-nowrap">🇵🇹 Portuguese Club</button>
+    </aside>
+
+    <!-- Chat -->
+    <div class="flex-1 flex flex-col">
+      <div class="px-5 py-3 border-b border-charcoal/10">
+        <label for="display-name" class="sr-only">Your display name</label>
+        <input id="display-name" type="text" maxlength="24" placeholder="Your display name" class="field w-full max-w-xs px-3 py-2 text-sm">
+      </div>
+      <div id="chat-scroll" class="chat-scroll flex-1 overflow-y-auto p-5 space-y-3">
+        <p class="text-center text-sm text-charcoal/50">Choose a club to start chatting.</p>
+      </div>
+      <form id="chat-form" class="p-4 border-t border-charcoal/10 flex gap-3">
+        <label for="chat-input" class="sr-only">Message</label>
+        <input id="chat-input" type="text" required placeholder="Type a message…" class="field flex-1 px-4 py-2.5 text-sm" disabled>
+        <button type="submit" id="chat-send" class="btn-primary px-5 py-2.5 text-sm font-medium" disabled>Send</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-charcoal text-cream/85 mt-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 text-center">
+    <div class="flex items-baseline gap-2 justify-center">
+      <span class="font-display text-2xl font-700 text-cream">BaiYun</span>
+      <span class="text-xs tracking-[0.25em] text-cream/60">LINGUA</span>
+    </div>
+    <p class="mt-4 text-xs text-cream/50">&copy; <span data-year>2026</span> BaiYun Lingua. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script type="module">
+  import { watchClubMessages, sendClubMessage } from "./js/firebase.js";
+
+  const clubBtns = document.querySelectorAll(".club-btn");
+  const chatScroll = document.getElementById("chat-scroll");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatSend = document.getElementById("chat-send");
+  const displayName = document.getElementById("display-name");
+
+  let currentClub = null;
+  let unsubscribe = null;
+
+  displayName.value = localStorage.getItem("baiyun_display_name") || "";
+  displayName.addEventListener("input", () => localStorage.setItem("baiyun_display_name", displayName.value));
+
+  function renderMessages(msgs) {
+    const me = displayName.value.trim() || "You";
+    if (!msgs.length) {
+      chatScroll.innerHTML = `<p class="text-center text-sm text-charcoal/50">No messages yet — say hello 👋</p>`;
+      return;
+    }
+    chatScroll.innerHTML = msgs.map((m) => `
+      <div class="msg ${m.user === me ? "mine" : "theirs"} px-4 py-2.5">
+        ${m.user !== me ? `<p class="text-xs font-medium text-gold mb-0.5">${m.user}</p>` : ""}
+        <p class="text-sm">${m.text}</p>
+      </div>`).join("");
+    chatScroll.scrollTop = chatScroll.scrollHeight;
+  }
+
+  function selectClub(club) {
+    currentClub = club;
+    clubBtns.forEach((b) => {
+      const active = b.dataset.club === club;
+      b.classList.toggle("bg-burgundy", active);
+      b.classList.toggle("text-white", active);
+      b.classList.toggle("bg-white", !active);
+    });
+    chatInput.disabled = false;
+    chatSend.disabled = false;
+    chatScroll.innerHTML = `<p class="text-center text-sm text-charcoal/50">Loading messages…</p>`;
+    if (unsubscribe) unsubscribe();
+    unsubscribe = watchClubMessages(club, renderMessages);
+  }
+
+  clubBtns.forEach((btn) => btn.addEventListener("click", () => selectClub(btn.dataset.club)));
+
+  chatForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (!text || !currentClub) return;
+    const user = displayName.value.trim() || "Anonymous";
+    chatInput.value = "";
+    try {
+      await sendClubMessage(currentClub, user, text);
+    } catch (err) {
+      console.error("sendClubMessage failed:", err);
+    }
+  });
+</script>
+</body>
+</html>

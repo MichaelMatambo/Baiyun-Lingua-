@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Languages — BaiYun Lingua</title>
+<meta name="description" content="Mandarin, English/IELTS, Korean, Japanese, Spanish, French and Portuguese courses at BaiYun Lingua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { cream:"#FFF8E7", burgundy:{DEFAULT:"#6B1D2A",dark:"#521521"}, beige:"#F5E6CC", charcoal:"#2B2B2B", gold:"#C9A86A" },
+    fontFamily: { display:["Playfair Display","serif"], sans:["Inter","sans-serif"] }
+  } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header id="site-nav" class="site-nav sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-2xl md:text-3xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[11px] md:text-xs tracking-[0.25em] text-charcoal/70">LINGUA</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-[15px]">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="languages.html" class="nav-link active">Languages</a></li>
+      <li><a href="index.html#method" class="nav-link">Method</a></li>
+      <li><a href="index.html#culture" class="nav-link">Culture</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="community.html" class="nav-link">Community</a></li>
+      <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+    </ul>
+    <div class="hidden lg:block"><a href="enroll.html" class="btn-primary px-5 py-2.5 text-sm font-medium inline-block">Enroll Now</a></div>
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-charcoal/10 bg-cream px-6 py-5 space-y-4">
+    <a href="index.html" class="block nav-link">Home</a>
+    <a href="languages.html" class="block nav-link active">Languages</a>
+    <a href="index.html#method" class="block nav-link">Method</a>
+    <a href="index.html#culture" class="block nav-link">Culture</a>
+    <a href="about.html" class="block nav-link">About</a>
+    <a href="community.html" class="block nav-link">Community</a>
+    <a href="index.html#resources" class="block nav-link">Resources</a>
+    <a href="enroll.html" class="btn-primary block text-center px-5 py-3 text-sm font-medium mt-2">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="max-w-5xl mx-auto px-6 lg:px-10 pt-16 pb-10 text-center">
+  <p class="text-gold font-medium tracking-wide mb-3">Seven languages, one method</p>
+  <h1 class="font-display text-4xl md:text-5xl font-700">Find your language</h1>
+  <p class="mt-4 text-charcoal/70 max-w-lg mx-auto">Jump to any language below for what you'll learn, or filter live course listings by language.</p>
+</section>
+
+<!-- Jump tabs -->
+<nav aria-label="Jump to language" class="sticky top-20 z-40 bg-cream/95 backdrop-blur border-y border-charcoal/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex gap-2 overflow-x-auto">
+    <a href="#mandarin" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇨🇳 Mandarin</a>
+    <a href="#english" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇬🇧 English/IELTS</a>
+    <a href="#korean" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇰🇷 Korean</a>
+    <a href="#japanese" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇯🇵 Japanese</a>
+    <a href="#spanish" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇪🇸 Spanish</a>
+    <a href="#french" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇫🇷 French</a>
+    <a href="#portuguese" class="pill px-4 py-1.5 rounded-full text-sm whitespace-nowrap">🇵🇹 Portuguese</a>
+  </div>
+</nav>
+
+<div class="max-w-5xl mx-auto px-6 lg:px-10 divide-y divide-charcoal/10">
+
+  <section id="mandarin" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇨🇳</span>
+      <h2 class="font-display text-2xl font-700 mt-3">Mandarin Chinese</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Our flagship course. Built around HSK preparation, daily speaking practice and character writing from stroke order up.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>HSK 1–4 exam preparation</li>
+        <li>Guided speaking and listening drills</li>
+        <li>Character writing and recognition</li>
+        <li>Chinese culture, festivals and etiquette</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in Mandarin</a>
+    </div>
+  </section>
+
+  <section id="english" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇬🇧</span>
+      <h2 class="font-display text-2xl font-700 mt-3">English / IELTS</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Academic and general English with a dedicated IELTS track for study and work abroad.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>IELTS Reading, Writing, Listening and Speaking practice</li>
+        <li>Academic and business English</li>
+        <li>Mock tests with band-score feedback</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in English/IELTS</a>
+    </div>
+  </section>
+
+  <section id="korean" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇰🇷</span>
+      <h2 class="font-display text-2xl font-700 mt-3">Korean</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Start with Hangul, then move quickly into conversation for travel, study and K-culture fans.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>Hangul reading and writing</li>
+        <li>Everyday conversation practice</li>
+        <li>Korean culture and media context</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in Korean</a>
+    </div>
+  </section>
+
+  <section id="japanese" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇯🇵</span>
+      <h2 class="font-display text-2xl font-700 mt-3">Japanese</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Hiragana, katakana and foundational kanji, applied directly to conversation.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>Hiragana, katakana and core kanji</li>
+        <li>Conversational Japanese</li>
+        <li>Etiquette and workplace culture</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in Japanese</a>
+    </div>
+  </section>
+
+  <section id="spanish" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇪🇸</span>
+      <h2 class="font-display text-2xl font-700 mt-3">Spanish</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Conversational Spanish built for travel, work and everyday confidence.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>Practical conversation from lesson one</li>
+        <li>Grammar built around real usage</li>
+        <li>Latin American and Iberian culture notes</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in Spanish</a>
+    </div>
+  </section>
+
+  <section id="french" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇫🇷</span>
+      <h2 class="font-display text-2xl font-700 mt-3">French</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>From first phrases to fluent discussion, with francophone culture woven throughout.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>Beginner to advanced conversation tracks</li>
+        <li>Pronunciation-focused speaking practice</li>
+        <li>Francophone Africa and Europe context</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in French</a>
+    </div>
+  </section>
+
+  <section id="portuguese" class="py-14 grid md:grid-cols-3 gap-8 scroll-mt-40">
+    <div class="md:col-span-1">
+      <span class="text-4xl">🇵🇹</span>
+      <h2 class="font-display text-2xl font-700 mt-3">Portuguese</h2>
+    </div>
+    <div class="md:col-span-2 text-charcoal/75 space-y-3">
+      <p>Portuguese for the classroom, the office, and everywhere in between.</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li>Conversational Portuguese</li>
+        <li>Business and academic vocabulary</li>
+        <li>Lusophone culture across Africa, Brazil and Portugal</li>
+      </ul>
+      <a href="enroll.html" class="btn-outline inline-block mt-3 px-5 py-2.5 text-sm font-medium">Enroll in Portuguese</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ LIVE COURSES FROM FIRESTORE ============ -->
+<section class="bg-beige/60 py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      <div>
+        <h2 class="font-display text-3xl font-700">Available courses</h2>
+        <p class="mt-2 text-charcoal/70 text-sm">Pulled live from our course catalog. Filter by language below.</p>
+      </div>
+      <select id="course-filter" class="field px-4 py-2.5 text-sm">
+        <option value="all">All languages</option>
+        <option value="mandarin">Mandarin Chinese</option>
+        <option value="english">English / IELTS</option>
+        <option value="korean">Korean</option>
+        <option value="japanese">Japanese</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+        <option value="portuguese">Portuguese</option>
+      </select>
+    </div>
+    <div id="course-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <p class="text-center text-charcoal/60 col-span-full py-10">Loading courses…</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-charcoal text-cream/85">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 text-center">
+    <div class="flex items-baseline gap-2 justify-center">
+      <span class="font-display text-2xl font-700 text-cream">BaiYun</span>
+      <span class="text-xs tracking-[0.25em] text-cream/60">LINGUA</span>
+    </div>
+    <p class="mt-4 text-xs text-cream/50">&copy; <span data-year>2026</span> BaiYun Lingua. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script type="module">
+  import { loadCoursesByLanguage } from "./js/firebase.js";
+
+  function courseCard(c) {
+    const img = c.image
+      ? `<div class="h-36 rounded-xl bg-cover bg-center mb-4" style="background-image:url('${c.image}')"></div>`
+      : `<div class="h-36 rounded-xl bg-white/60 mb-4 flex items-center justify-center text-charcoal/30 text-sm">No image yet</div>`;
+    return `
+      <article class="card p-6">
+        ${img}
+        <h3 class="font-display text-lg font-600">${c.title ?? "Untitled course"}</h3>
+        <p class="text-xs uppercase tracking-wide text-burgundy mt-1">${c.level ?? ""}</p>
+        <p class="mt-2 text-sm text-charcoal/70">${c.description ?? ""}</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="font-display text-lg">${c.priceUSD ? "$" + c.priceUSD : ""}</span>
+          <a href="enroll.html" class="text-burgundy font-medium text-sm">Enroll &rsaquo;</a>
+        </div>
+      </article>`;
+  }
+
+  const grid = document.getElementById("course-grid");
+  const filter = document.getElementById("course-filter");
+
+  loadCoursesByLanguage("all", courseCard, grid);
+  filter.addEventListener("change", () => loadCoursesByLanguage(filter.value, courseCard, grid));
+</script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BaiYun Lingua — Learn Languages. Connect Cultures. Open the World.</title>
+<meta name="description" content="A multilingual education platform born in Africa and connected to the world. Mandarin, English/IELTS, Korean, Japanese, Spanish, French and Portuguese.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: "#FFF8E7",
+          burgundy: { DEFAULT: "#6B1D2A", dark: "#521521" },
+          beige: "#F5E6CC",
+          charcoal: "#2B2B2B",
+          gold: "#C9A86A"
+        },
+        fontFamily: {
+          display: ["Playfair Display", "serif"],
+          sans: ["Inter", "sans-serif"]
+        },
+        borderRadius: { "2xl": "1.25rem", "3xl": "1.75rem" }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header id="site-nav" class="site-nav sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-2xl md:text-3xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[11px] md:text-xs tracking-[0.25em] text-charcoal/70">LINGUA</span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-9 text-[15px]">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="languages.html" class="nav-link">Languages</a></li>
+      <li><a href="index.html#method" class="nav-link">Method</a></li>
+      <li><a href="index.html#culture" class="nav-link">Culture</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="community.html" class="nav-link">Community</a></li>
+      <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+    </ul>
+
+    <div class="hidden lg:block">
+      <a href="enroll.html" class="btn-primary px-5 py-2.5 text-sm font-medium inline-block">Enroll Now</a>
+    </div>
+
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-charcoal/10 bg-cream px-6 py-5 space-y-4">
+    <a href="index.html" class="block nav-link">Home</a>
+    <a href="languages.html" class="block nav-link">Languages</a>
+    <a href="index.html#method" class="block nav-link">Method</a>
+    <a href="index.html#culture" class="block nav-link">Culture</a>
+    <a href="about.html" class="block nav-link">About</a>
+    <a href="community.html" class="block nav-link">Community</a>
+    <a href="index.html#resources" class="block nav-link">Resources</a>
+    <a href="enroll.html" class="btn-primary block text-center px-5 py-3 text-sm font-medium mt-2">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-20 md:pt-20 md:pb-28 grid md:grid-cols-2 gap-14 items-center">
+  <div>
+    <p class="text-gold font-medium tracking-wide mb-4">白云 · White Cloud</p>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-700 text-charcoal">
+      Learn Languages.<br>Connect Cultures.<br>Open the World.
+    </h1>
+    <p class="mt-6 text-lg text-charcoal/75 max-w-md">
+      Welcome to BaiYun Lingua — your gateway to languages, cultures and global communication.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="enroll.html" class="btn-primary px-7 py-3.5 font-medium">Start Learning</a>
+      <a href="languages.html" class="btn-outline px-7 py-3.5 font-medium">Explore Languages</a>
+    </div>
+    <p class="mt-8 text-sm text-charcoal/50">A multilingual education platform born in Africa and connected to the world.</p>
+  </div>
+
+  <div class="hero-orbit" aria-hidden="true">
+    <div class="hero-globe"></div>
+    <div class="hero-cloud cloud-a"></div>
+    <div class="hero-cloud cloud-b"></div>
+  </div>
+</section>
+
+<!-- ============ WHY BAIYUN ============ -->
+<section class="bg-beige/60 py-20 md:py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-700">Why learn with BaiYun</h2>
+      <p class="mt-4 text-charcoal/70">A language is a door. Here's what's on the other side of it.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 6 reason cards -->
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Connect with people</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Speak to friends, family and strangers in the words that matter most to them.</p>
+      </div>
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 9l-5 5-3-3-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Create opportunities</h3>
+        <p class="mt-2 text-sm text-charcoal/70">New markets, new employers and new collaborations open to multilingual speakers.</p>
+      </div>
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Travel confidently</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Order, ask, negotiate and wander without needing a translation app.</p>
+      </div>
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><path d="M22 10L12 4 2 10l10 6 10-6z"/><path d="M6 12v5c3 2 9 2 12 0v-5" stroke-linecap="round"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Study internationally</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Meet the language requirements for scholarships and universities abroad.</p>
+      </div>
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Communicate naturally</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Move past textbook phrases into real conversation, at real speed.</p>
+      </div>
+      <div class="reveal p-7 bg-white rounded-2xl border border-charcoal/5">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B1D2A" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg>
+        <h3 class="font-display text-xl font-600 mt-4">Understand cultures</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Grammar is only half the story — we teach the customs behind the words.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET BAIYUN LAOSHI ============ -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
+  <div class="reveal order-2 md:order-1">
+    <p class="text-gold font-medium tracking-wide mb-3">Your guide</p>
+    <h2 class="font-display text-3xl md:text-4xl font-700">Meet BaiYun Laoshi</h2>
+    <p class="mt-5 text-charcoal/75 leading-relaxed">
+      I'm BaiYun Laoshi, a language educator passionate about helping students cross cultural and linguistic boundaries.
+      I built this academy from Harare because I believe a student anywhere in Africa deserves the same access to
+      Mandarin, Korean, Japanese, Spanish, French and Portuguese as a student in Beijing, Seoul or Paris — taught with
+      warmth, structure, and an eye for the culture behind every phrase.
+    </p>
+    <a href="about.html" class="btn-outline inline-block mt-7 px-6 py-3 font-medium">Read the full story</a>
+  </div>
+  <div class="reveal order-1 md:order-2">
+    <div class="aspect-[4/5] rounded-3xl bg-beige flex items-center justify-center border border-gold/40">
+      <div class="text-center px-8">
+        <div class="w-20 h-20 mx-auto rounded-full bg-white border border-gold/50 flex items-center justify-center font-display text-2xl text-burgundy">白云</div>
+        <p class="mt-4 text-sm text-charcoal/50">Portrait placeholder — replace with BaiYun Laoshi's photo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHOOSE YOUR LANGUAGE ============ -->
+<section id="languages" class="bg-beige/60 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-700">Choose your language</h2>
+      <p class="mt-4 text-charcoal/70">Seven languages, one method. Start wherever your goals take you.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇨🇳</span>
+        <h3 class="font-display text-xl font-600 mt-4">Mandarin Chinese</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">HSK preparation, speaking practice, character writing and the culture behind them.</p>
+        <a href="languages.html#mandarin" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇬🇧</span>
+        <h3 class="font-display text-xl font-600 mt-4">English / IELTS</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">Academic and general English with focused IELTS band-score preparation.</p>
+        <a href="languages.html#english" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇰🇷</span>
+        <h3 class="font-display text-xl font-600 mt-4">Korean</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">Hangul from day one, then everyday conversation and K-culture context.</p>
+        <a href="languages.html#korean" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇯🇵</span>
+        <h3 class="font-display text-xl font-600 mt-4">Japanese</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">Hiragana, katakana and kanji foundations built into real conversation.</p>
+        <a href="languages.html#japanese" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇪🇸</span>
+        <h3 class="font-display text-xl font-600 mt-4">Spanish</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">Confident conversational Spanish for travel, work and study.</p>
+        <a href="languages.html#spanish" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇫🇷</span>
+        <h3 class="font-display text-xl font-600 mt-4">French</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">From first phrases to fluent discussion, with francophone culture throughout.</p>
+        <a href="languages.html#french" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+      <article class="card reveal p-7 flex flex-col">
+        <span class="text-3xl" aria-hidden="true">🇵🇹</span>
+        <h3 class="font-display text-xl font-600 mt-4">Portuguese</h3>
+        <p class="mt-2 text-sm text-charcoal/70 flex-1">Portuguese for the classroom, the office and everywhere in between.</p>
+        <a href="languages.html#portuguese" class="mt-5 text-burgundy font-medium text-sm">Explore &rsaquo;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAIYUN METHOD ============ -->
+<section id="method" class="max-w-5xl mx-auto px-6 lg:px-10 py-20 md:py-28">
+  <div class="max-w-2xl mb-16 reveal">
+    <h2 class="font-display text-3xl md:text-4xl font-700">The BaiYun Method&trade;</h2>
+    <p class="mt-4 text-charcoal/70">Six steps, repeated at every level, from your first word to real fluency.</p>
+  </div>
+
+  <div class="relative pl-14 md:pl-20">
+    <div class="method-line absolute left-[27px] md:left-[39px] top-2 bottom-2 w-px"></div>
+
+    <div class="method-step reveal relative mb-14">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">01</div>
+      <h3 class="font-display text-xl font-600">Learn</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Build core vocabulary and grammar with structured, bite-sized lessons.</p>
+    </div>
+    <div class="method-step reveal relative mb-14">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">02</div>
+      <h3 class="font-display text-xl font-600">Speak</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Practice in guided conversations from your very first class.</p>
+    </div>
+    <div class="method-step reveal relative mb-14">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">03</div>
+      <h3 class="font-display text-xl font-600">Listen</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Train your ear on native speakers, not just textbook audio.</p>
+    </div>
+    <div class="method-step reveal relative mb-14">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">04</div>
+      <h3 class="font-display text-xl font-600">Connect</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Understand the culture that gives the language its meaning.</p>
+    </div>
+    <div class="method-step reveal relative mb-14">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">05</div>
+      <h3 class="font-display text-xl font-600">Apply</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Use what you've learned in real-life scenarios — travel, work, exams.</p>
+    </div>
+    <div class="method-step reveal relative">
+      <div class="method-index absolute -left-14 md:-left-20 top-0 w-11 h-11 rounded-full flex items-center justify-center text-lg">06</div>
+      <h3 class="font-display text-xl font-600">Advance</h3>
+      <p class="mt-2 text-charcoal/70 max-w-lg">Move up through levels with regular assessment and feedback.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CULTURE ============ -->
+<section id="culture" class="bg-burgundy text-cream py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+    <h2 class="font-display text-3xl md:text-4xl font-700 reveal">A language is more than words.</h2>
+    <p class="mt-4 text-cream/80 max-w-xl mx-auto reveal">Every course carries the culture that shapes how a language is actually used.</p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3 reveal">
+      <span class="pill px-5 py-2 rounded-full text-sm">Food</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Music</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Traditions</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Slang</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">History</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Social customs</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Business culture</span>
+      <span class="pill px-5 py-2 rounded-full text-sm">Travel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="max-w-4xl mx-auto px-6 lg:px-10 py-20 md:py-28">
+  <div class="max-w-2xl mb-14 reveal">
+    <h2 class="font-display text-3xl md:text-4xl font-700">Your journey</h2>
+    <p class="mt-4 text-charcoal/70">Every student moves through the same five stages, at their own pace.</p>
+  </div>
+
+  <div class="reveal flex items-start justify-between relative">
+    <div class="journey-track absolute top-[7px] left-0 right-0 h-0.5"></div>
+    <div class="journey-track-fill absolute top-[7px] left-0 h-0.5" style="width:15%"></div>
+
+    <div class="relative flex flex-col items-center text-center w-1/5">
+      <div class="journey-dot is-current"></div>
+      <p class="mt-4 text-sm font-medium">Beginner</p>
+    </div>
+    <div class="relative flex flex-col items-center text-center w-1/5">
+      <div class="journey-dot"></div>
+      <p class="mt-4 text-sm font-medium text-charcoal/60">Elementary</p>
+    </div>
+    <div class="relative flex flex-col items-center text-center w-1/5">
+      <div class="journey-dot"></div>
+      <p class="mt-4 text-sm font-medium text-charcoal/60">Intermediate</p>
+    </div>
+    <div class="relative flex flex-col items-center text-center w-1/5">
+      <div class="journey-dot"></div>
+      <p class="mt-4 text-sm font-medium text-charcoal/60">Advanced</p>
+    </div>
+    <div class="relative flex flex-col items-center text-center w-1/5">
+      <div class="journey-dot"></div>
+      <p class="mt-4 text-sm font-medium text-charcoal/60">Confident Communicator</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="bg-beige/60 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="font-display text-3xl md:text-4xl font-700">A community, not just a classroom</h2>
+      <p class="mt-4 text-charcoal/70">Practice doesn't stop when the lesson ends.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div class="reveal bg-white rounded-2xl p-6 border border-charcoal/5">
+        <h3 class="font-display font-600 text-lg">Language Challenges</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Monthly goals to keep your practice consistent.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 border border-charcoal/5">
+        <h3 class="font-display font-600 text-lg">Conversation Rooms</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Live speaking practice with peers at your level.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 border border-charcoal/5">
+        <h3 class="font-display font-600 text-lg">Culture Days</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Food, film and festivals from each language's world.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 border border-charcoal/5">
+        <h3 class="font-display font-600 text-lg">Language Clubs</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Small, ongoing groups for each language we teach.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 border border-charcoal/5">
+        <h3 class="font-display font-600 text-lg">BaiYun Events</h3>
+        <p class="mt-2 text-sm text-charcoal/70">Workshops, guest speakers and exam-prep bootcamps.</p>
+      </div>
+    </div>
+    <div class="mt-10 reveal">
+      <a href="community.html" class="btn-primary inline-block px-7 py-3.5 font-medium">Join the community</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESOURCES teaser ============ -->
+<section id="resources" class="max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-24 text-center">
+  <h2 class="font-display text-3xl md:text-4xl font-700 reveal">Ready to start?</h2>
+  <p class="mt-4 text-charcoal/70 max-w-lg mx-auto reveal">Enrollment takes two minutes. Your first lesson can be this week.</p>
+  <a href="enroll.html" class="btn-primary inline-block mt-8 px-8 py-4 font-medium reveal">Start Learning</a>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-charcoal text-cream/85">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-700 text-cream">BaiYun</span>
+        <span class="text-xs tracking-[0.25em] text-cream/60">LINGUA</span>
+      </div>
+      <p class="mt-4 text-sm text-cream/60 max-w-sm">Learn Languages. Connect Cultures. Open the World. A multilingual education platform born in Africa and connected to the world.</p>
+      <form id="newsletter-form" class="mt-6 flex max-w-sm">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" required placeholder="Your email" class="flex-1 rounded-l-xl px-4 py-3 text-charcoal text-sm outline-none">
+        <button type="submit" class="bg-gold text-charcoal font-medium px-5 rounded-r-xl text-sm">Subscribe</button>
+      </form>
+      <p id="newsletter-note" class="hidden mt-2 text-sm text-gold">Thanks — you're on the list.</p>
+    </div>
+    <div>
+      <h4 class="font-display text-lg mb-4 text-cream">Explore</h4>
+      <ul class="space-y-2 text-sm text-cream/65">
+        <li><a href="languages.html" class="hover:text-gold">Languages</a></li>
+        <li><a href="about.html" class="hover:text-gold">About</a></li>
+        <li><a href="community.html" class="hover:text-gold">Community</a></li>
+        <li><a href="enroll.html" class="hover:text-gold">Enroll</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-lg mb-4 text-cream">Follow</h4>
+      <ul class="space-y-2 text-sm text-cream/65">
+        <li><a href="#" class="hover:text-gold">Instagram</a></li>
+        <li><a href="#" class="hover:text-gold">Facebook</a></li>
+        <li><a href="#" class="hover:text-gold">TikTok</a></li>
+        <li><a href="#" class="hover:text-gold">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-cream/10 py-6 text-center text-xs text-cream/50">
+    &copy; <span data-year>2026</span> BaiYun Lingua. All rights reserved.
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

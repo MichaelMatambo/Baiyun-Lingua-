@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — BaiYun Lingua</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { cream:"#FFF8E7", burgundy:{DEFAULT:"#6B1D2A",dark:"#521521"}, beige:"#F5E6CC", charcoal:"#2B2B2B", gold:"#C9A86A" },
+    fontFamily: { display:["Playfair Display","serif"], sans:["Inter","sans-serif"] }
+  } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+
+<header class="border-b border-charcoal/10 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[10px] tracking-[0.25em] text-charcoal/70">LINGUA · ADMIN</span>
+    </a>
+    <button id="logout-btn" class="hidden text-sm text-burgundy font-medium">Lock panel</button>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 lg:px-10 py-14">
+
+  <!-- ============ PASSWORD GATE ============ -->
+  <section id="gate" class="max-w-sm mx-auto text-center">
+    <h1 class="font-display text-2xl font-700">Admin access</h1>
+    <p class="mt-2 text-sm text-charcoal/60">Enter the admin password to view enrollments.</p>
+    <form id="gate-form" class="mt-6 space-y-3">
+      <input id="gate-password" type="password" required placeholder="Admin password" class="field w-full px-4 py-3 text-sm text-center">
+      <button type="submit" class="btn-primary w-full py-3 font-medium">Unlock</button>
+      <p id="gate-error" class="text-sm text-burgundy hidden">Incorrect password.</p>
+    </form>
+    <p class="mt-6 text-xs text-charcoal/40">
+      This is a simple client-side gate for internal use only — see README.md for how to secure this properly
+      with Firebase Auth before storing real student data behind it.
+    </p>
+  </section>
+
+  <!-- ============ DASHBOARD ============ -->
+  <section id="dashboard" class="hidden">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+      <div>
+        <h1 class="font-display text-3xl font-700">Enrollments</h1>
+        <p class="text-sm text-charcoal/60 mt-1"><span id="count-total">0</span> total · <span id="count-paid">0</span> paid</p>
+      </div>
+      <input id="search" type="search" placeholder="Search by name, email or language…" class="field px-4 py-2.5 text-sm w-full sm:w-72">
+    </div>
+
+    <div class="overflow-x-auto bg-white rounded-2xl border border-charcoal/5">
+      <table class="admin-table w-full text-sm">
+        <thead class="text-left border-b border-charcoal/10">
+          <tr>
+            <th class="px-5 py-3 font-600">Name</th>
+            <th class="px-5 py-3 font-600">Contact</th>
+            <th class="px-5 py-3 font-600">Language</th>
+            <th class="px-5 py-3 font-600">Level</th>
+            <th class="px-5 py-3 font-600">Enrolled</th>
+            <th class="px-5 py-3 font-600">Status</th>
+            <th class="px-5 py-3 font-600">Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="7" class="px-5 py-8 text-center text-charcoal/50">Loading enrollments…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="js/main.js" defer></script>
+<script type="module">
+  import { ADMIN_PASSWORD } from "./js/firebase-config.js";
+  import { loadEnrollments, setEnrollmentPaid } from "./js/firebase.js";
+
+  const gate = document.getElementById("gate");
+  const gateForm = document.getElementById("gate-form");
+  const gateError = document.getElementById("gate-error");
+  const dashboard = document.getElementById("dashboard");
+  const logoutBtn = document.getElementById("logout-btn");
+  const tableBody = document.getElementById("table-body");
+  const search = document.getElementById("search");
+  const countTotal = document.getElementById("count-total");
+  const countPaid = document.getElementById("count-paid");
+
+  let allEnrollments = [];
+
+  gateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const value = document.getElementById("gate-password").value;
+    if (value === ADMIN_PASSWORD) {
+      sessionStorage.setItem("baiyun_admin_unlocked", "1");
+      unlock();
+    } else {
+      gateError.classList.remove("hidden");
+    }
+  });
+
+  logoutBtn.addEventListener("click", () => {
+    sessionStorage.removeItem("baiyun_admin_unlocked");
+    location.reload();
+  });
+
+  function fmtDate(ts) {
+    try {
+      return ts?.toDate ? ts.toDate().toLocaleDateString() : "—";
+    } catch { return "—"; }
+  }
+
+  function renderRows(rows) {
+    if (!rows.length) {
+      tableBody.innerHTML = `<tr><td colspan="7" class="px-5 py-8 text-center text-charcoal/50">No enrollments match.</td></tr>`;
+      return;
+    }
+    tableBody.innerHTML = rows.map((r) => `
+      <tr class="border-b border-charcoal/5 last:border-0">
+        <td class="px-5 py-3">${r.name ?? "—"}</td>
+        <td class="px-5 py-3 text-charcoal/70">${r.email ?? "—"}<br><span class="text-xs">${r.phone ?? ""}</span></td>
+        <td class="px-5 py-3 capitalize">${r.language ?? "—"}</td>
+        <td class="px-5 py-3 capitalize">${r.level ?? "—"}</td>
+        <td class="px-5 py-3">${fmtDate(r.createdAt)}</td>
+        <td class="px-5 py-3"><span class="status-pill ${r.paid ? "status-paid" : "status-unpaid"}">${r.paid ? "Paid" : "Unpaid"}</span></td>
+        <td class="px-5 py-3">
+          <button data-id="${r.id}" data-paid="${r.paid ? "1" : "0"}" class="toggle-paid text-burgundy font-medium text-xs">
+            Mark as ${r.paid ? "unpaid" : "paid"}
+          </button>
+        </td>
+      </tr>`).join("");
+
+    tableBody.querySelectorAll(".toggle-paid").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.id;
+        const nextPaid = btn.dataset.paid !== "1";
+        btn.disabled = true;
+        btn.textContent = "Updating…";
+        try {
+          await setEnrollmentPaid(id, nextPaid);
+          const row = allEnrollments.find((r) => r.id === id);
+          if (row) row.paid = nextPaid;
+          applyFilter();
+        } catch (err) {
+          console.error(err);
+          btn.disabled = false;
+        }
+      });
+    });
+  }
+
+  function applyFilter() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = !term ? allEnrollments : allEnrollments.filter((r) =>
+      [r.name, r.email, r.language].join(" ").toLowerCase().includes(term)
+    );
+    countTotal.textContent = allEnrollments.length;
+    countPaid.textContent = allEnrollments.filter((r) => r.paid).length;
+    renderRows(filtered);
+  }
+  search.addEventListener("input", applyFilter);
+
+  async function unlock() {
+    gate.classList.add("hidden");
+    dashboard.classList.remove("hidden");
+    logoutBtn.classList.remove("hidden");
+    try {
+      allEnrollments = await loadEnrollments();
+      applyFilter();
+    } catch (err) {
+      console.error(err);
+      tableBody.innerHTML = `<tr><td colspan="7" class="px-5 py-8 text-center text-burgundy">Couldn't load enrollments. Check your Firebase config and Firestore security rules.</td></tr>`;
+    }
+  }
+
+  if (sessionStorage.getItem("baiyun_admin_unlocked") === "1") unlock();
+</script>
+</body>
+</html>

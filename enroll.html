@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll — BaiYun Lingua</title>
+<meta name="description" content="Enroll at BaiYun Lingua — choose your language and level, and start learning this week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { cream:"#FFF8E7", burgundy:{DEFAULT:"#6B1D2A",dark:"#521521"}, beige:"#F5E6CC", charcoal:"#2B2B2B", gold:"#C9A86A" },
+    fontFamily: { display:["Playfair Display","serif"], sans:["Inter","sans-serif"] }
+  } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header id="site-nav" class="site-nav sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-2xl md:text-3xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[11px] md:text-xs tracking-[0.25em] text-charcoal/70">LINGUA</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-[15px]">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="languages.html" class="nav-link">Languages</a></li>
+      <li><a href="index.html#method" class="nav-link">Method</a></li>
+      <li><a href="index.html#culture" class="nav-link">Culture</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="community.html" class="nav-link">Community</a></li>
+      <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+    </ul>
+    <div class="hidden lg:block"><a href="enroll.html" class="btn-primary px-5 py-2.5 text-sm font-medium inline-block">Enroll Now</a></div>
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-charcoal/10 bg-cream px-6 py-5 space-y-4">
+    <a href="index.html" class="block nav-link">Home</a>
+    <a href="languages.html" class="block nav-link">Languages</a>
+    <a href="index.html#method" class="block nav-link">Method</a>
+    <a href="index.html#culture" class="block nav-link">Culture</a>
+    <a href="about.html" class="block nav-link">About</a>
+    <a href="community.html" class="block nav-link">Community</a>
+    <a href="index.html#resources" class="block nav-link">Resources</a>
+    <a href="enroll.html" class="btn-primary block text-center px-5 py-3 text-sm font-medium mt-2">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="max-w-2xl mx-auto px-6 lg:px-10 py-16">
+  <p class="text-gold font-medium tracking-wide mb-3 text-center">Two minutes to start</p>
+  <h1 class="font-display text-4xl font-700 text-center">Enroll at BaiYun Lingua</h1>
+  <p class="mt-4 text-charcoal/70 text-center">Tell us about yourself and we'll set up your first lesson.</p>
+
+  <form id="enroll-form" class="mt-10 bg-white rounded-3xl p-7 md:p-9 space-y-5 border border-charcoal/5" novalidate>
+    <div>
+      <label for="name" class="block text-sm font-medium mb-1.5">Full name</label>
+      <input id="name" name="name" type="text" required class="field w-full px-4 py-3 text-sm">
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label for="whatsapp" class="block text-sm font-medium mb-1.5">WhatsApp number</label>
+        <input id="whatsapp" name="phone" type="tel" required placeholder="+263 7X XXX XXXX" class="field w-full px-4 py-3 text-sm">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1.5">Email</label>
+        <input id="email" name="email" type="email" required class="field w-full px-4 py-3 text-sm">
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label for="language" class="block text-sm font-medium mb-1.5">Choose language</label>
+        <select id="language" name="language" required class="field w-full px-4 py-3 text-sm">
+          <option value="" disabled selected>Select a language</option>
+          <option value="mandarin">🇨🇳 Mandarin Chinese</option>
+          <option value="english">🇬🇧 English / IELTS</option>
+          <option value="korean">🇰🇷 Korean</option>
+          <option value="japanese">🇯🇵 Japanese</option>
+          <option value="spanish">🇪🇸 Spanish</option>
+          <option value="french">🇫🇷 French</option>
+          <option value="portuguese">🇵🇹 Portuguese</option>
+        </select>
+      </div>
+      <div>
+        <label for="level" class="block text-sm font-medium mb-1.5">Level</label>
+        <select id="level" name="level" required class="field w-full px-4 py-3 text-sm">
+          <option value="" disabled selected>Select a level</option>
+          <option value="beginner">Beginner</option>
+          <option value="elementary">Elementary</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label for="message" class="block text-sm font-medium mb-1.5">What's your goal? (optional)</label>
+      <textarea id="message" name="message" rows="3" class="field w-full px-4 py-3 text-sm" placeholder="e.g. HSK 3 by December, or conversational Spanish for a trip"></textarea>
+    </div>
+
+    <button type="submit" id="submit-btn" class="btn-primary w-full py-3.5 font-medium">Submit enrollment</button>
+    <p id="form-status" class="text-sm text-center hidden" role="status"></p>
+  </form>
+
+  <!-- ============ PAYMENT (shown after successful enrollment) ============ -->
+  <div id="payment-panel" class="hidden mt-8 bg-beige/60 rounded-3xl p-7 md:p-9 border border-gold/30">
+    <h2 class="font-display text-xl font-700">Complete your payment</h2>
+    <p class="mt-2 text-sm text-charcoal/70">Your enrollment is saved. Pay to confirm your place — or pay later, that's fine too.</p>
+
+    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+      <div class="bg-white rounded-2xl p-5 border border-charcoal/5">
+        <h3 class="font-medium">Pay locally — Paynow Zimbabwe</h3>
+        <p class="text-xs text-charcoal/60 mt-1">EcoCash, ZiG or card via Paynow.</p>
+        <!--
+          PAYNOW INTEGRATION:
+          Paste your Paynow Merchant Integration ID and Key here, and wire this
+          button to your Paynow initiate-transaction endpoint (server-side —
+          Paynow keys must never live in client JS). On success, call
+          setEnrollmentPaid(enrollmentId, true) from js/firebase.js.
+        -->
+        <button id="pay-paynow" class="btn-outline w-full mt-4 py-2.5 text-sm font-medium">Pay with Paynow</button>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-charcoal/5">
+        <h3 class="font-medium">Pay internationally — Stripe</h3>
+        <p class="text-xs text-charcoal/60 mt-1">Card payments from outside Zimbabwe.</p>
+        <!--
+          STRIPE INTEGRATION:
+          Replace the href below with your real Stripe Payment Link
+          (Stripe Dashboard > Payment Links). Optionally append
+          ?client_reference_id={enrollmentId} so a webhook can mark
+          the matching enrollment as paid automatically.
+        -->
+        <a id="pay-stripe" href="https://buy.stripe.com/REPLACE_WITH_YOUR_PAYMENT_LINK" target="_blank" rel="noopener" class="btn-outline w-full mt-4 py-2.5 text-sm font-medium block text-center">Pay with Stripe</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-charcoal text-cream/85">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 text-center">
+    <div class="flex items-baseline gap-2 justify-center">
+      <span class="font-display text-2xl font-700 text-cream">BaiYun</span>
+      <span class="text-xs tracking-[0.25em] text-cream/60">LINGUA</span>
+    </div>
+    <p class="mt-4 text-xs text-cream/50">&copy; <span data-year>2026</span> BaiYun Lingua. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script type="module">
+  import { submitEnrollment } from "./js/firebase.js";
+
+  const form = document.getElementById("enroll-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const status = document.getElementById("form-status");
+  const paymentPanel = document.getElementById("payment-panel");
+  const stripeLink = document.getElementById("pay-stripe");
+  const paynowBtn = document.getElementById("pay-paynow");
+
+  let lastEnrollmentId = null;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting…";
+    status.classList.add("hidden");
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const ref = await submitEnrollment(data);
+      lastEnrollmentId = ref.id;
+
+      status.textContent = "You're enrolled! Scroll down to complete payment, or we'll be in touch on WhatsApp.";
+      status.className = "text-sm text-center text-burgundy font-medium";
+      status.classList.remove("hidden");
+
+      stripeLink.href = stripeLink.href.split("?")[0] + `?client_reference_id=${lastEnrollmentId}`;
+      paymentPanel.classList.remove("hidden");
+      paymentPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      form.reset();
+    } catch (err) {
+      console.error("Enrollment failed:", err);
+      status.textContent = "Something went wrong submitting your enrollment. Please try again, or reach us on WhatsApp.";
+      status.className = "text-sm text-center text-burgundy font-medium";
+      status.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit enrollment";
+    }
+  });
+
+  paynowBtn.addEventListener("click", () => {
+    alert("Paynow isn't wired up yet — see the HTML comment above this button for integration steps.");
+  });
+</script>
+</body>
+</html>

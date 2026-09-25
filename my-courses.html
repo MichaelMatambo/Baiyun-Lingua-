@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Courses — BaiYun Lingua</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { cream:"#FFF8E7", burgundy:{DEFAULT:"#6B1D2A",dark:"#521521"}, beige:"#F5E6CC", charcoal:"#2B2B2B", gold:"#C9A86A" },
+    fontFamily: { display:["Playfair Display","serif"], sans:["Inter","sans-serif"] }
+  } } };
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-charcoal bg-cream antialiased">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header id="site-nav" class="site-nav sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-baseline gap-2">
+      <span class="font-display text-2xl md:text-3xl font-700 text-burgundy">BaiYun</span>
+      <span class="text-[11px] md:text-xs tracking-[0.25em] text-charcoal/70">LINGUA</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-[15px]">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="languages.html" class="nav-link">Languages</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="community.html" class="nav-link">Community</a></li>
+      <li><a href="my-courses.html" class="nav-link active">My Courses</a></li>
+    </ul>
+    <div class="hidden lg:block"><a href="enroll.html" class="btn-primary px-5 py-2.5 text-sm font-medium inline-block">Enroll Now</a></div>
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-charcoal/10 bg-cream px-6 py-5 space-y-4">
+    <a href="index.html" class="block nav-link">Home</a>
+    <a href="languages.html" class="block nav-link">Languages</a>
+    <a href="about.html" class="block nav-link">About</a>
+    <a href="community.html" class="block nav-link">Community</a>
+    <a href="my-courses.html" class="block nav-link active">My Courses</a>
+    <a href="enroll.html" class="btn-primary block text-center px-5 py-3 text-sm font-medium mt-2">Enroll Now</a>
+  </div>
+</header>
+
+<main id="main" class="max-w-3xl mx-auto px-6 lg:px-10 py-16 min-h-[60vh]">
+
+  <!-- ============ LOGGED OUT VIEW ============ -->
+  <section id="auth-view">
+    <h1 class="font-display text-4xl font-700 text-center">My Courses</h1>
+    <p class="mt-3 text-charcoal/70 text-center">Log in with the email you used to enroll to see your courses.</p>
+
+    <div class="mt-10 bg-white rounded-3xl p-7 md:p-9 border border-charcoal/5 max-w-md mx-auto">
+      <div class="flex gap-2 mb-6" role="tablist">
+        <button id="tab-login" class="flex-1 py-2 rounded-xl text-sm font-medium bg-burgundy text-white" role="tab" aria-selected="true">Log in</button>
+        <button id="tab-register" class="flex-1 py-2 rounded-xl text-sm font-medium bg-beige text-charcoal" role="tab" aria-selected="false">Create account</button>
+      </div>
+
+      <form id="auth-form" class="space-y-4">
+        <div>
+          <label for="auth-email" class="block text-sm font-medium mb-1.5">Email</label>
+          <input id="auth-email" type="email" required class="field w-full px-4 py-3 text-sm">
+        </div>
+        <div>
+          <label for="auth-password" class="block text-sm font-medium mb-1.5">Password</label>
+          <input id="auth-password" type="password" required minlength="6" class="field w-full px-4 py-3 text-sm">
+        </div>
+        <button type="submit" id="auth-submit" class="btn-primary w-full py-3 font-medium">Log in</button>
+        <p id="auth-status" class="text-sm text-center text-burgundy hidden"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ LOGGED IN VIEW ============ -->
+  <section id="dashboard-view" class="hidden">
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div>
+        <h1 class="font-display text-4xl font-700">My Courses</h1>
+        <p id="welcome-email" class="mt-2 text-charcoal/70"></p>
+      </div>
+      <button id="logout-btn" class="btn-outline px-5 py-2.5 text-sm font-medium">Log out</button>
+    </div>
+
+    <div id="courses-list" class="mt-10 space-y-4"></div>
+  </section>
+
+</main>
+
+<footer class="bg-charcoal text-cream/85">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 text-center">
+    <div class="flex items-baseline gap-2 justify-center">
+      <span class="font-display text-2xl font-700 text-cream">BaiYun</span>
+      <span class="text-xs tracking-[0.25em] text-cream/60">LINGUA</span>
+    </div>
+    <p class="mt-4 text-xs text-cream/50">&copy; <span data-year>2026</span> BaiYun Lingua. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script type="module">
+  import { watchAuthState, loginStudent, registerStudent, logoutStudent, loadMyEnrollments } from "./js/firebase.js";
+
+  const authView = document.getElementById("auth-view");
+  const dashboardView = document.getElementById("dashboard-view");
+  const authForm = document.getElementById("auth-form");
+  const authSubmit = document.getElementById("auth-submit");
+  const authStatus = document.getElementById("auth-status");
+  const tabLogin = document.getElementById("tab-login");
+  const tabRegister = document.getElementById("tab-register");
+  const welcomeEmail = document.getElementById("welcome-email");
+  const coursesList = document.getElementById("courses-list");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  let mode = "login";
+
+  function setMode(next) {
+    mode = next;
+    const isLogin = mode === "login";
+    tabLogin.classList.toggle("bg-burgundy", isLogin);
+    tabLogin.classList.toggle("text-white", isLogin);
+    tabLogin.classList.toggle("bg-beige", !isLogin);
+    tabLogin.classList.toggle("text-charcoal", !isLogin);
+    tabRegister.classList.toggle("bg-burgundy", !isLogin);
+    tabRegister.classList.toggle("text-white", !isLogin);
+    tabRegister.classList.toggle("bg-beige", isLogin);
+    tabRegister.classList.toggle("text-charcoal", isLogin);
+    authSubmit.textContent = isLogin ? "Log in" : "Create account";
+  }
+  tabLogin.addEventListener("click", () => setMode("login"));
+  tabRegister.addEventListener("click", () => setMode("register"));
+
+  authForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("auth-email").value.trim();
+    const password = document.getElementById("auth-password").value;
+    authStatus.classList.add("hidden");
+    authSubmit.disabled = true;
+    try {
+      if (mode === "login") {
+        await loginStudent(email, password);
+      } else {
+        await registerStudent(email, password);
+      }
+    } catch (err) {
+      console.error(err);
+      authStatus.textContent = err.message?.replace("Firebase:", "").trim() || "Something went wrong.";
+      authStatus.classList.remove("hidden");
+    } finally {
+      authSubmit.disabled = false;
+    }
+  });
+
+  logoutBtn.addEventListener("click", () => logoutStudent());
+
+  function renderCourse(e) {
+    return `
+      <div class="bg-white rounded-2xl p-5 border border-charcoal/5 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <h3 class="font-display font-600">${e.language ?? "Course"} — ${e.level ?? ""}</h3>
+          <p class="text-xs text-charcoal/60 mt-1">${e.message ? e.message : "No goal noted"}</p>
+        </div>
+        <span class="status-pill ${e.paid ? "status-paid" : "status-unpaid"}">${e.paid ? "Paid" : "Payment pending"}</span>
+      </div>`;
+  }
+
+  watchAuthState(async (user) => {
+    if (user) {
+      authView.classList.add("hidden");
+      dashboardView.classList.remove("hidden");
+      welcomeEmail.textContent = `Logged in as ${user.email}`;
+      coursesList.innerHTML = `<p class="text-charcoal/60 text-sm">Loading your courses…</p>`;
+      try {
+        const mine = await loadMyEnrollments(user.email);
+        coursesList.innerHTML = mine.length
+          ? mine.map(renderCourse).join("")
+          : `<p class="text-charcoal/60 text-sm">No enrollments found for this email yet. <a href="enroll.html" class="text-burgundy font-medium">Enroll now &rsaquo;</a></p>`;
+      } catch (err) {
+        console.error(err);
+        coursesList.innerHTML = `<p class="text-burgundy text-sm">Couldn't load your courses right now.</p>`;
+      }
+    } else {
+      dashboardView.classList.add("hidden");
+      authView.classList.remove("hidden");
+    }
+  });
+</script>
+</body>
+</html>
